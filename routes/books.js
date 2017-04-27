@@ -1,43 +1,43 @@
 import BooksControllers from '../controllers/books';
 
-export default (app, Books) => {
+export default (app) => {
   const booksControllers = new BooksControllers(app.datasource.models.Books);
   app.route('/books')
     .get((req, res) => {
       booksControllers.getAll()
-        .then(response => {
+        .then((response) => {
           res.status(response.statusCode);
           res.json(response.data);
-        })
+        });
     })
     .post((req, res) => {
       booksControllers.create(req.body)
-        .then(response => {
+        .then((response) => {
           res.status(response.statusCode);
           res.json(response.data);
-        })
+        });
     });
 
   app.route('/books/:id')
     .get((req, res) => {
       booksControllers.getById(req.params)
-        .then(response => {
+        .then((response) => {
           res.status(response.statusCode);
           res.json(response.data);
-        })
+        });
     })
     .put((req, res) => {
       booksControllers.update(req.body, req.params)
-        .then(response => {
+        .then((response) => {
           res.status(response.statusCode);
           res.json(response.data);
-        })
+        });
     })
     .delete((req, res) => {
       booksControllers.delete(req.params)
-        .then(response => {
+        .then((response) => {
           res.status(response.statusCode);
           res.json(response.data);
-        })
+        });
     });
-}
+};

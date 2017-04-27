@@ -13,6 +13,4 @@ const Books = app.datasource.models.Books;
 booksRouter(app, Books);
 
 
-
-
 export default app;
