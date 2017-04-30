@@ -22,7 +22,6 @@ describe('Route users', () => {
           expect(res.body[0].id).to.be.eql(defaultUser.id);
           expect(res.body[0].name).to.be.eql(defaultUser.name);
           expect(res.body[0].email).to.be.eql(defaultUser.email);
-          expect(res.body[0].password).to.be.eql(defaultUser.password);
           done(err);
         });
     });
@@ -36,7 +35,6 @@ describe('Route users', () => {
           expect(res.body.id).to.be.eql(defaultUser.id);
           expect(res.body.name).to.be.eql(defaultUser.name);
           expect(res.body.email).to.be.eql(defaultUser.email);
-          expect(res.body.password).to.be.eql(defaultUser.password);
           done(err);
         });
     });
@@ -57,7 +55,6 @@ describe('Route users', () => {
           expect(res.body.id).to.be.eql(newUsers.id);
           expect(res.body.name).to.be.eql(newUsers.name);
           expect(res.body.email).to.be.eql(newUsers.email);
-          expect(res.body.password).to.be.eql(newUsers.password);
           done(err);
         });
     });
